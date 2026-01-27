@@ -34,10 +34,9 @@ enum RecipeAPIError: Error, LocalizedError {
 class RecipeAPIService {
     static let shared = RecipeAPIService()
     
-    // For now, these are placeholders
-    private let appId = "YOUR_EDAMAM_APP_ID"
-    private let appKey = "YOUR_EDAMAM_APP_KEY"
-    private let baseURL = "https://api.edamam.com/api/recipes/v2"
+    private let appId = "f1f15cb8"
+    private let appKey = "67760485a453bd74f03d0770c6772daa"
+    private let baseURL = "https://www.edamam.com/results/recipes/"
     
     private init() {}
     
