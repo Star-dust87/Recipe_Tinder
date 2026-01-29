@@ -1,21 +1,20 @@
 //Created by Stella K on 1/27/26
+// Updated by Stella K on 1/29/26
 //Model for tracking user swipe interactions
 
 import Foundation
 import FirebaseFirestore
 
-enum SwipeDirection: String, Codable
-{
+enum SwipeDirection: String, Codable {
     case right = "liked"
     case left = "disliked"
     case up = "superLiked"
 }
 
-struct SwipeInteraction: Codable, Identifiable
-{
+struct SwipeInteraction: Codable, Identifiable {
     @DocumentID var id: String?
-    let userID: String
-    let recipeID: String
+    let userId: String  
+    let recipeId: String  
     let recipeLabel: String
     let direction: SwipeDirection
     let timestamp: Date
@@ -49,5 +48,3 @@ struct SwipeInteraction: Codable, Identifiable
 extension SwipeInteraction {
     static let collectionName = "swipeInteractions"
 }
-
-
