@@ -1,5 +1,5 @@
-////Created by Stella K on 1/27/26
-//  
+//  Created by Stella K on 1/27/26
+//  Updated by Stella K on 1/29/26
 //  Service for fetching recipes from Edamam API
 //
 
@@ -36,7 +36,7 @@ class RecipeAPIService {
     
     private let appId = "f1f15cb8"
     private let appKey = "67760485a453bd74f03d0770c6772daa"
-    private let baseURL = "https://www.edamam.com/results/recipes/"
+    private let baseURL = "https://api.edamam.com/api/recipes/v2"
     
     private init() {}
     
@@ -50,7 +50,7 @@ class RecipeAPIService {
         maxResults: Int = 20
     ) async throws -> [Recipe] {
         
-        guard !appId.contains("YOUR_") && !appKey.contains("YOUR_") else {
+        guard !appId.isEmpty && !appKey.isEmpty else {
             throw RecipeAPIError.apiKeyMissing
         }
         
